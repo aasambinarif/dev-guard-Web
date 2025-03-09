@@ -1,38 +1,1024 @@
-.App {
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background-color: #121212;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.section-title {
   text-align: center;
+  margin-bottom: 20px;
+  color: #F77F00;
+}
+.section-title span {
+  color: #FFB703;
 }
 
-.App-logo {
-  height: 40vmin;
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero Container Styles */
+.hero-container {
+  background-image: url(back1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  transition: padding-top 0.3s ease-out; /* Smooth transition for padding */
+}
+
+/* Navbar Styles */
+.header {
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 1%;
+  background-color: rgba(255, 255, 255, 0);
+  transition: background-color 0.3s ease;
+  padding: 0.5rem;
+  position: relative;
+  z-index: 10; /* Keep navbar above hero section */
+}
+
+.logo {
+  height: 30px;
+  width: 30px;
+  transition: transform 0.3s ease;
+  margin-right: auto;
+}
+
+/* Hamburger Menu for Tablet and Mobile */
+.menu-toggle {
+  position: absolute;
+  opacity: 0;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.menu-toggle-label {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #F77F00;
+  border-radius: 5px;
+  z-index: 20;
+  position: absolute;
+  right: 20px;
+}
+
+.menu-toggle-label span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  background-color: #fff;
+  transition: 0.3s;
+}
+
+.menu-toggle:checked + .menu-toggle-label span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle:checked + .menu-toggle-label span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle:checked + .menu-toggle-label span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  padding-inline: 30px;
+  margin-left: auto;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #F77F00;
+  border-bottom: 2px solid #F77F00;
+}
+
+.contact-link {
+  color: #F77F00;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #FFB703;
+}
+
+/* Hover effect for nav links */
+.nav-links li:hover::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #FFB703;
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+/* Hero Section Styles */
+.hero {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(81, 81, 81, 0.136);
+  padding: 40px;
+  border-radius: 20px;
+  width: 70%;
+  max-width: 1200px;
+  box-shadow: 0 4px 10px rgba(11, 11, 11, 0.314);
+  text-align: center;
+  backdrop-filter: blur(1.5px);
+  overflow: hidden;
+  z-index: 1; /* Keep hero below navbar */
+}
+
+.hero-title {
+  font-size: 60px;
+  color: #f77700;
+  margin-top: -10px;
+  word-wrap: break-word;
+}
+
+.hero p {
+  margin-top: -30px;
+  color: #ffffff;
+  margin-bottom: 30px;
+  word-wrap: break-word;
+}
+
+/* Updated .cta-button Styles */
+.cta-button {
+  background-color: #F77F00;
+  padding: 8px 16px; /* Reduced padding for better fit */
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  word-wrap: break-word;
+  max-width: 100%; /* Prevent button from overflowing */
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+}
+
+/* Responsive Styles for ≤ 768px */
+@media (max-width: 768px) {
+  .menu-toggle-label {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-left: 0;
+    padding-inline: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    border-radius: 5px;
+    pointer-events: none;
+    z-index: 10; /* Ensure it overlaps the hero section */
+  }
+
+  .menu-toggle:checked ~ .nav-links {
+    max-height: 300px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .menu-toggle:checked ~ .hero-container {
+    padding-top: 200px;
+  }
+
+  .hero {
+    width: 90%;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .hero-title {
+    font-size: 35px;
+  }
+
+  .cta-button {
+    padding: 6px 12px;
+    font-size: 14px;
+    width: auto;
+    max-width: 90%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Very Small Screens (≤ 400px) */
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 25px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .cta-button {
+    padding: 4px 10px; /* Further reduced padding */
+    font-size: 12px;    /* Smaller font size for very small screens */
+    max-width: 80%;     /* Limit max width for very small screens */
+  }
+}
+
+
+
+
+/* About Section Styles */
+.about-us-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-color: #e5e5e5;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  gap: 30px;
+  max-width: 100%;
+  margin: 0;
+  height: 100vh; /* Full-page height by default */
+  color: #121212;
+  flex-wrap: wrap; /* Allow columns to stack on smaller screens */
+  box-sizing: border-box; /* Ensure padding is included in height */
+}
+
+
+
+/* About Us Left Container */
+.about-us-left {
+  position: relative;
+  background-image: url(whyusim.jpg);
+  background-size: cover;
+  background-position: center;
+  flex: 1;
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 20px;
+  min-height: 300px; /* Ensures a minimum height */
+  height: 80%; /* Adjusted to fit within 100vh */
+  box-sizing: border-box;
+}
+
+/* Background Image Wrapper (for Blur Effect) */
+.about-us-left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: inherit;
+  background-size: inherit;
+  background-position: inherit;
+  transition: filter 0.5s ease-in-out;
+  z-index: 0;
+}
+
+.about-us-left:hover::before {
+  filter: blur(5px);
+}
+
+/* Dark Overlay on Hover */
+.about-us-left::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.about-us-left:hover::after {
+  opacity: 1;
+}
+
+/* Text Content */
+.about-us-left .text-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.5s ease-in-out;
+  text-align: left;
+}
+
+.about-us-left:hover .text-content {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Heading Styling */
+.about-us-left h2 {
+  font-size: 32px;
+  color: #e37329;
+  margin: 0;
+}
+
+/* Paragraph Styling */
+.about-us-left p {
+  font-size: 16px;
+  color: #fff;
+  margin-top: 10px;
+}
+
+/* About Us Right Container */
+.about-us-right {
+  flex: 2;
+  text-align: left;
+  padding: 20px;
+  height: 80%; /* Adjusted to fit within 100vh */
+  box-sizing: border-box;
+}
+
+.about-us-right h3 {
+  font-size: 36px;
+  color: #e37329;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.about-us-right p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .about-us-container {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      height: auto; /* Allow scroll if content overflows */
+  }
+
+  .about-us-left, .about-us-right {
+      flex: 1;
+      width: 100%;
+      padding: 10px;
+      height: auto; /* Auto height for smaller screens */
+  }
+
+  .about-us-left h2 {
+      font-size: 28px;
+  }
+
+  .about-us-right h3 {
+      font-size: 30px;
+      text-align: center;
+      margin-bottom: 15px;
+  }
+
+  .about-us-right p {
+      text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-us-left h2 {
+      font-size: 24px;
+  }
+
+  .about-us-left p {
+      font-size: 14px;
+  }
+
+  .about-us-right h3 {
+      font-size: 26px;
+  }
+
+  .about-us-right p {
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-us-left, .about-us-right {
+      padding: 10px;
+      text-align: center;
+  }
+
+  .about-us-left h2 {
+      font-size: 20px;
+  }
+
+  .about-us-left p {
+      font-size: 12px;
+  }
+
+  .about-us-right h3 {
+      font-size: 22px;
+  }
+
+  .about-us-right p {
+      font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .about-us-left h2, .about-us-right h3 {
+      font-size: 18px;
+  }
+
+  .about-us-left p, .about-us-right p {
+      font-size: 10px;
+  }
+}
+
+
+/* Service Container */
+.service-container {
+
+  background-image: url(service.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2rem 1rem;
+  text-align: center;
+  width: 100%;
+  margin: 0; 
+  min-height: 100vh;            /* Ensure full-page height */
+  box-sizing: border-box;
+  position: relative;           /* Enable absolute positioning for heading */
+}
+
+/* Service Heading */
+.services-heading {
+  font-size: 2.5rem;
+  color: #e6800b;
+  margin-bottom: 2rem;
+  position: absolute;           /* Fix heading at the top center */
+  top: 0.5rem;                    /* Adjust distance from top */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Inner Wrapper for Cards */
+.service-inner-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;      /* Center cards vertically */
+  flex-grow: 1;                 /* Use remaining space for cards */
+  padding-top: 6rem;            /* Offset for heading height */
+}
+
+/* Grid Layout for Cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 0 1rem;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+@media (min-width: 576px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
+  }
+}
+
+@media (min-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for medium and up */
+  }
+}
+
+/* Service Box */
+.service-box {
+  background-color: #fff;
+  border-radius: 0.8rem;
+  border: 3px solid #f38e3d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  padding: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  max-height: none;
+}
+
+/* Hover Effect for Service Box */
+.service-box:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 0 15px 5px rgba(227, 115, 41, 0.3);
+}
+
+/* Icon Styling */
+.service-box-icon {
+  margin-bottom: 1rem;
+}
+
+.service-box-icon img {
+  width: 55px;
+  height: 55px;
+}
+
+/* Text Styling */
+.service-box h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2d3748;
+}
+
+.service-box p {
+  color: #718096;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  white-space: normal;
+}
+
+/* Footer Text Styling */
+.service-box-footer {
+  color: #e37329;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+.service-box:hover .service-box-footer {
+  color: #c36222;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 400px) {
+  .services-heading {
+    font-size: 1.8rem;
+  }
+
+  .service-box h3 {
+    font-size: 1rem;
+  }
+
+  .service-box p {
+    font-size: 0.85rem;
+  }
+
+  .service-box-icon img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+
+
+
+/* Why Us Section */
+.why-us {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  min-height: 100vh;          /* Allow expansion if needed */
+  position: relative;
+  box-sizing: border-box;     /* Include padding in height */
+}
+
+/* Title Styling */
+.why-us-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 2.5rem;
+}
+
+.why-us-title span {
+  color: #e37329;             /* Theme color */
+}
+
+/* Content Container */
+.why-us-content {
+  display: flex;
+  justify-content: center;    /* Center cards horizontally */
+  align-items: center;        /* Align cards vertically in the same line */
+  gap: 2rem;                  /* Space between cards */
+  position: relative;         /* Remove absolute positioning */
+  flex-wrap: wrap;            /* Allow cards to wrap on smaller screens */
+  max-width: 1200px;          /* Limit width for better layout */
+  margin: 0 auto;             /* Center content horizontally */
+}
+
+/* Why Us Card Styling */
+.why-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  width: 250px;
+  height: 250px;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  margin-bottom: 2rem;        /* Space between rows on wrap */
+}
+
+.why-card:hover {
+  transform: scale(1.05) translateY(-5px);
+  border-color: #f38e3d;      /* Change the border to a lighter orange */
+  box-shadow: 0 0 10px 5px #f38e3d;
+}
+
+/* Icon Styling */
+.why-card-icon img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.why-card:hover .why-card-icon img {
+  transform: scale(1.1);
+}
+
+/* Text Styling */
+.why-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2d3748;
+  transition: color 0.3s ease-in-out;
+}
+
+.why-card:hover .why-card-title {
+  color: #e37329;             /* Theme color on hover */
+}
+
+.why-card-description {
+  color: #718096;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.why-card:hover .why-card-description {
+  color: #4a5568;             /* Darker text on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .why-us-title {
+    font-size: 2rem;          /* Reduce title size on smaller screens */
+  }
+
+  .why-card {
+    width: 200px;             /* Reduce card width for smaller screens */
+    height: auto;             /* Allow height to adjust based on content */
+    padding: 1rem;            /* Reduce padding inside cards */
+  }
+
+  .why-us-content {
+    gap: 1rem;                /* Reduce gap between cards */
+  }
+}
+
+@media (max-width: 480px) {
+  .why-us {
+    padding: 2rem 1rem;       /* Reduce padding for very small screens */
+  }
+
+  .why-card {
+    width: 100%;              /* Full width for cards on mobile */
+    max-width: 300px;         /* Limit max width */
+  }
+}
+
+
+/* Testimonials Section */
+.testimonials {
+  background-image: url(testi.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;     /* Center cards horizontally */
+  align-items: center;         /* Center cards vertically */
+  padding: 4rem 2rem;          /* Adjust padding if needed */
+  
+  min-height: 100vh;           /* Allow expansion if needed */
+  position: relative;
+  flex-direction: column;      /* Keep title above cards */
+  box-sizing: border-box;      /* Include padding in height */
+}
+
+/* Testimonials Title */
+.testimonials-title {
+  text-align: center;
+  
+  margin-bottom: 2rem;
+  margin-top: 0;
+  font-size: 2rem;
+  color: #fff;
+  padding: 0 1rem;
+             /* Prevent overflow on smaller screens */
+}
+
+/* Testimonials Content */
+.testimonials-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;             /* Allow cards to wrap on smaller screens */
+  gap: 2rem;
+  max-width: 1200px;           /* Limit width for better layout */
+  margin: 0 auto;              /* Center content horizontally */
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  border: 3px solid #f38e3d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  width: 300px;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  cursor: pointer;
+  margin-bottom: 2rem;         /* Space between rows on wrap */
+}
+
+.testimonial-card:hover {
+  transform: scale(1.05) translateY(-5px);
+  border-color: #f38e3d;       /* Change the border to a lighter orange */
+  box-shadow: 0 0 10px 5px #f38e3d;
+}
+
+/* Testimonial Icon */
+.testimonial-card-icon img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+/* Testimonial Title */
+.testimonial-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+/* Testimonial Description */
+.testimonial-card-description {
+  color: #718096;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+/* Testimonial Rating */
+.testimonial-rating span {
+  color: #000000;              /* Black color for stars */
+  font-size: 1.2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .testimonials-title {
+    font-size: 1.8rem;         /* Reduce title size on smaller screens */
+  }
+
+  .testimonial-card {
+    width: 220px;              /* Reduce card width for smaller screens */
+    padding: 1rem;             /* Reduce padding inside cards */
+  }
+
+  .testimonials-content {
+    gap: 1rem;                 /* Reduce gap between cards */
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials {
+    padding: 2rem 1rem;        /* Reduce padding for very small screens */
+  }
+
+  .testimonial-card {
+    width: 100%;               /* Full width for cards on mobile */
+    max-width: 300px;          /* Limit max width */
+  }
+
+  .testimonials-title {
+    font-size: 1.5rem;         /* Further reduce title size */
+  }
+}
+
+
+/* Contact Section */
+.contact {
+  text-align: center;
+  padding: 2rem 2rem 4rem;      /* Adjusted padding to add space at the bottom */
+  background-color: #f9f9f9;
+  min-height: 80vh;             /* Ensure minimum height is 80vh */
+  box-sizing: border-box;       /* Include padding in height and width */
+  display: flex;
+  flex-direction: column;       /* Stack elements vertically */
+  justify-content: center;      /* Center content vertically */
+  align-items: center;   
+       /* Center content horizontally */
+}
+
+/* Section Title */
+.section-title {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #2d3748;
+  align-self: flex-start;       /* Align title to the left within contact section */
+  width: 100%;                  /* Full width for proper alignment */
+  text-align: center;           /* Center the text itself */
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;          /* Center align items vertically */
+  gap: 2rem;
+  max-width: 800px;             /* Limit max width for larger screens */
+  width: 100%;                  /* Full width within .contact */
+  height: auto;                 /* Auto height for better fit */
+  padding: 2rem 1rem;           /* Padding inside the form */
+  box-sizing: border-box;       /* Include padding in width */
+}
+
+/* Left and Right Columns */
+.contact-left,
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;                  /* Consistent gap between elements */
+  flex: 1;
+  min-width: 280px;             /* Prevent shrinking too much */
+  max-width: 400px;             /* Limit max width for columns */
+  align-items: center;          /* Center items inside columns */
+}
+
+/* Contact Left Column */
+.contact-left {
+  justify-content: center;
+  margin-left: 0;               /* Remove negative margin for centering */
+}
+
+/* Contact Right Column */
+.contact-right {
+  justify-content: center;
+  margin-top: 0;                /* Keep alignment */
+}
+
+/* Input and Textarea Styling */
+.contact-left input,
+.contact-right textarea,
+.contact-right button {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  font-size: 0.95rem;
+  width: 100%;                  /* Full width within columns */
+  box-sizing: border-box;       /* Prevent overflow */
+}
+
+/* Input Field Adjustment */
+.contact-left input {
+  max-width: 400px;             /* Limit max width for inputs */
+}
+
+/* Textarea Adjustment */
+.contact-right textarea {
+  min-height: 150px;            /* Standard height for textarea */
+  resize: vertical;
+}
+
+/* Button Styling */
+.contact-right button {
+  background-color: #e37329;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem;
+  transition: background-color 0.3s;
+  width: 150px;                 /* Fix button width for consistency */
+  align-self: center;           /* Center button horizontally */
+}
+
+.contact-right button:hover {
+  background-color: #c36222;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .contact-form {
+    padding: 2rem;              /* Increase padding for medium screens */
+  }
+
+  .contact-left,
+  .contact-right {
+    max-width: 100%;            /* Full width for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-form {
+    flex-direction: column;     /* Stack columns on medium screens */
+    align-items: center;        /* Center align for mobile */
+    height: auto;               /* Auto height for better fit */
+  }
+
+  .contact-left input,
+  .contact-right textarea,
+  .contact-right button {
+    width: 100%;                /* Full width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form {
+    padding: 1rem;              /* Compact padding for small screens */
+  }
+
+  .contact-left input,
+  .contact-right textarea,
+  .contact-right button {
+    width: 100%;                /* Full width for very small screens */
+  }
+
+  .contact-right button {
+    width: 100%;                /* Full-width button */
+  }
+}
+
+
+
+footer {
+  background-color: #333;
   color: white;
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+  /* Footer is no longer fixed */
 }
 
-.App-link {
-  color: #61dafb;
+footer p {
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
