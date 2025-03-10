@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/dev-guard-Web/static/css/main.07ec7fe5.css",
+    "main.js": "/dev-guard-Web/static/js/main.677fc0c7.js",
+    "static/js/453.e71f450d.chunk.js": "/dev-guard-Web/static/js/453.e71f450d.chunk.js",
+    "static/media/service.jpg": "/dev-guard-Web/static/media/service.ea1cc58a26b0c0012c6c.jpg",
+    "static/media/whyusim.jpg": "/dev-guard-Web/static/media/whyusim.ee921e66f6bad5f13ccd.jpg",
+    "static/media/testi.jpg": "/dev-guard-Web/static/media/testi.76183d22af78ff37820d.jpg",
+    "static/media/back1.jpg": "/dev-guard-Web/static/media/back1.394035315b356d4c26c0.jpg",
+    "static/media/profile.png": "/dev-guard-Web/static/media/profile.ce46e6d9e7e2851194b7.png",
+    "index.html": "/dev-guard-Web/index.html",
+    "main.07ec7fe5.css.map": "/dev-guard-Web/static/css/main.07ec7fe5.css.map",
+    "main.677fc0c7.js.map": "/dev-guard-Web/static/js/main.677fc0c7.js.map",
+    "453.e71f450d.chunk.js.map": "/dev-guard-Web/static/js/453.e71f450d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.07ec7fe5.css",
+    "static/js/main.677fc0c7.js"
+  ]
+}
