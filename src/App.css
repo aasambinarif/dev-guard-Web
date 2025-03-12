@@ -496,7 +496,7 @@ html {
   text-align: center;
   width: 100%;
   margin: 0; 
-  min-height: 100vh;            /* Ensure full-page height */
+  min-height: 90vh;            /* Ensure full-page height */
   box-sizing: border-box;
   position: relative;           /* Enable absolute positioning for heading */
 }
@@ -630,7 +630,7 @@ html {
   text-align: center;
   padding: 4rem 2rem;
   background-color: #f9f9f9;
-  min-height: 100vh;          /* Allow expansion if needed */
+  min-height: 90vh;          /* Allow expansion if needed */
   position: relative;
   box-sizing: border-box;     /* Include padding in height */
 }
@@ -754,7 +754,7 @@ html {
   align-items: center;         /* Center cards vertically */
   padding: 4rem 2rem;          /* Adjust padding if needed */
   
-  min-height: 100vh;           /* Allow expansion if needed */
+  min-height: 90vh;           /* Allow expansion if needed */
   position: relative;
   flex-direction: column;      /* Keep title above cards */
   box-sizing: border-box;      /* Include padding in height */

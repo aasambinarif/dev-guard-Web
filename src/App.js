@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Swiper, SwiperSlide } from 'swiper/react';
+
 import 'swiper/css';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
 
     <header class="header">
   <nav class="nav">
-    <img src="/images/logo.png" alt="Logo" class="logo" />
+    <img src={require('./shape.png')} alt="Logo" class="logo" />
 
     <input type="checkbox" id="menu-toggle" class="menu-toggle" />
     <label for="menu-toggle" class="menu-toggle-label">
@@ -71,13 +71,9 @@ function App() {
     <div className="about-us-right">
         <h3>The Best Service Provider</h3>
         <p>
-            DevGuards Solution is a top-level marketing service provider, specializing in web development, 
-            search engine optimization, pay-per-click campaigns, and social media management. 
-            With a team of enthusiastic experts, our digital marketing agency optimizes your online presence with 
-            Google My Business, Google Analytics, and Google Search Console. Whether you require SEO or graphic 
-            designing for social media platforms, our creative marketing agency can help you in the marketplace 
-            for your business advancements. Furthermore, DevGuards Solution is a trustworthy service-providing 
-            agency by which you can work to fulfill your digital requirements.
+        DevGuards Solution is a premier digital marketing service provider, specializing in cutting-edge web development, search engine optimization (SEO), pay-per-click (PPC) advertising, and social media management. Our team of passionate and skilled professionals is dedicated to helping businesses enhance their online presence and achieve measurable growth. By utilizing advanced tools like Google My Business, Google Analytics, and Google Search Console, we ensure that your brand gains maximum visibility and stays ahead of the competition. Whether you need improved search rankings, high-converting PPC campaigns, or engaging social media content, our experts craft tailored strategies to meet your unique business needs.
+
+Beyond marketing, we also provide graphic design services for social media, ensuring your brand’s visuals align with your business goals. Our creative team delivers visually appealing and compelling designs that captivate audiences and boost engagement. DevGuards Solution stands out as a reliable and results-driven digital solutions provider, committed to excellence and innovation. Whether you're a startup or an established enterprise, we are here to help you navigate the evolving digital landscape and achieve long-term success.
         </p>
     </div>
 </div>
@@ -103,7 +99,7 @@ function App() {
           <img src={require('./profile.png')} alt="Profile Icon" />
         </div>
         <h3>UI/UX</h3>
-        <p>We Create Exceptional Digital Marketing Plans That Align with Your Unique Brands, Ensuring every Campaign resonates with Your target Audience.</p>
+        <p>We create exceptional digital marketing plans that align with your unique brand, ensuring every campaign resonates with your target audience. By understanding your business goals and market dynamics, we craft strategies that drive engagement and enhance brand visibility. </p>
         <div className="service-box-footer">UI/UX</div>
       </div>
 
@@ -113,7 +109,7 @@ function App() {
           <img src={require('./profile.png')} alt="Profile Icon" />
         </div>
         <h3>Web Development</h3>
-        <p>We Create Exceptional Digital Marketing Plans That Align with Your Unique Brands, Ensuring every Campaign resonates with Your target Audience.</p>
+        <p>We create exceptional digital marketing plans that align with your unique brand, ensuring every campaign resonates with your target audience. By understanding your business goals and market dynamics, we craft strategies that drive engagement and enhance brand visibility. </p>
         <div className="service-box-footer">Web Dev</div>
       </div>
 
@@ -123,7 +119,7 @@ function App() {
           <img src={require('./profile.png')} alt="Profile Icon" />
         </div>
         <h3>Android Development</h3>
-        <p>We Create Exceptional Digital Marketing Plans That Align with Your Unique Brands, Ensuring every Campaign resonates with Your target Audience.</p>
+        <p>We create exceptional digital marketing plans that align with your unique brand, ensuring every campaign resonates with your target audience. By understanding your business goals and market dynamics, we craft strategies that drive engagement and enhance brand visibility. </p>
         <div className="service-box-footer">Android</div>
       </div>
 
