@@ -12,7 +12,7 @@ function App() {
 
     <header class="header">
   <nav class="nav">
-    <img src={require('./shape.png')} alt="Logo" class="logo" />
+    <img src={require('./vector2.png')} alt="Logo" class="logo" />
 
     <input type="checkbox" id="menu-toggle" class="menu-toggle" />
     <label for="menu-toggle" class="menu-toggle-label">
@@ -81,144 +81,157 @@ Beyond marketing, we also provide graphic design services for social media, ensu
 
 
 
-{/* Services Section */}
 <div className="service-container" id="services">
 
-  {/* Inner Wrapper for Proper Alignment */}
+  
   <div className="service-inner-wrapper">
 
-    {/* Services Heading at Top Center */}
+   
     <h2 className="services-heading">Services</h2>
 
-    {/* Card Container */}
+ 
     <div className="card-grid">
 
-      {/* Card 1 */}
-      <div className="service-box">
-        <div className="service-box-icon">
-          <img src={require('./profile.png')} alt="Profile Icon" />
+     
+      <div className="service-box card-container">
+      
+        <div className="card-image">
+          <img src={require('./Vector.png')} alt="UI/UX Design" />
         </div>
-        <h3>UI/UX</h3>
-        <p>We create exceptional digital marketing plans that align with your unique brand, ensuring every campaign resonates with your target audience. By understanding your business goals and market dynamics, we craft strategies that drive engagement and enhance brand visibility. </p>
-        <div className="service-box-footer">UI/UX</div>
+        
+        <div className="card-content">
+          
+          <p>We create exceptional digital marketing plans that align with your unique brand, ensuring every campaign resonates with your target audience. By understanding your business goals and market dynamics, we craft strategies that drive engagement and enhance brand visibility.</p>
+          <div className="service-box-footer">UI/UX</div>
+        </div>
       </div>
 
-      {/* Card 2 */}
-      <div className="service-box">
-        <div className="service-box-icon">
-          <img src={require('./profile.png')} alt="Profile Icon" />
+    
+      <div className="service-box card-container">
+       
+        <div className="card-image">
+          <img src={require('./vector2.png')} alt="Web Development" />
         </div>
-        <h3>Web Development</h3>
-        <p>We create exceptional digital marketing plans that align with your unique brand, ensuring every campaign resonates with your target audience. By understanding your business goals and market dynamics, we craft strategies that drive engagement and enhance brand visibility. </p>
-        <div className="service-box-footer">Web Dev</div>
+        <div className='card-border'>
+        <div className="card-content">
+          
+          <p>We create exceptional digital marketing plans that align with your unique brand, ensuring every campaign resonates with your target audience. By understanding your business goals and market dynamics, we craft strategies that drive engagement and enhance brand visibility.</p>
+          <div className="service-box-footer">Web Dev</div>
+        </div>
+        </div>
       </div>
 
-      {/* Card 3 */}
-      <div className="service-box">
-        <div className="service-box-icon">
-          <img src={require('./profile.png')} alt="Profile Icon" />
+      
+      <div className="service-box card-container">
+       
+        <div className="card-image">
+          <img src={require('./vector3.png')} alt="Android Development" />
         </div>
-        <h3>Android Development</h3>
-        <p>We create exceptional digital marketing plans that align with your unique brand, ensuring every campaign resonates with your target audience. By understanding your business goals and market dynamics, we craft strategies that drive engagement and enhance brand visibility. </p>
-        <div className="service-box-footer">Android</div>
+        
+        <div className="card-content">
+         
+          <p>We create exceptional digital marketing plans that align with your unique brand, ensuring every campaign resonates with your target audience. By understanding your business goals and market dynamics, we craft strategies that drive engagement and enhance brand visibility.</p>
+          <div className="service-box-footer">Android</div>
+        </div>
       </div>
-
     </div>
+    <a href="#why-us" className="cta-button">Why Us</a>
   </div>
 </div>
 
 
 
 
-
-
-{/* Why Us Section */}
-<section className="why-us" id="why-us">
-  <h2 className="why-us-title">
-    WHY <span>DEVGUARDS</span>?
-  </h2>
-  <div className="why-us-content">
-    <div className="why-card">
-      <div className="why-card-icon">
-        <img src={require('./profile.png')} alt="Customisation" />
+<div className="why-us-container" id="why-us">
+  <div className="why-us-inner-wrapper">
+    <h2 className="why-us-heading">WHY DEVGUARDS ?</h2>
+    <div className="card-grid">
+      <div className="why-box card-container">
+        <div className="card-image">
+          <img src={require('./🦆 vector4.png')} alt="Customisation" />
+        </div>
+        <div className="why-card-content">
+          <h3 className="why-card-title">Customisation</h3>
+          <p className="why-card-description">We Create Exceptional Digital Marketing Plans That Align with your Unique Brands, Ensuring every Campaign resonates with Your target Audience.</p>
+        </div>
       </div>
-      <h3 className="why-card-title">Customisation</h3>
-      <p className="why-card-description">
-        Tailored solutions to fit your unique needs and preferences.
-      </p>
-    </div>
-    <div className="why-card">
-      <div className="why-card-icon">
-        <img src={require('./profile.png')} alt="Security" />
+      <div className="why-box card-container">
+        <div className="card-image">
+          <img src={require('./vector5.png')} alt="Security" />
+        </div>
+        <div className="why-card-content">
+          <h3 className="why-card-title">Security</h3>
+          <p className="why-card-description">We Create Exceptional Digital Marketing Plans That Align with your Unique Brands, Ensuring every Campaign resonates with Your target Audience.</p>
+        </div>
       </div>
-      <h3 className="why-card-title">Security</h3>
-      <p className="why-card-description">
-        Robust security measures to protect your data and privacy.
-      </p>
-    </div>
-    <div className="why-card">
-      <div className="why-card-icon">
-        <img src={require('./profile.png')} alt="Customer Support" />
-      </div>
-      <h3 className="why-card-title">Customer Support</h3>
-      <p className="why-card-description">
-        24/7 support to assist you whenever you need help.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-
-     {/* Testimonials Section */}
-<section className="testimonials" id="testimonials">
-  <h2 className="testimonials-title">
-    <span>Testimonials</span>
-  </h2>
-  <div className="testimonials-content">
-    <div className="testimonial-card">
-      <div className="testimonial-card-icon">
-        <img src={require('./profile.png')} alt="User" />
-      </div>
-      <h3 className="testimonial-card-title">John Doe</h3>
-      <p className="testimonial-card-description">
-        Outstanding service with top-notch security measures. Highly recommended!
-      </p>
-      <div className="testimonial-rating">
-      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-
-      </div>
-    </div>
-
-    <div className="testimonial-card">
-      <div className="testimonial-card-icon">
-        <img src={require('./profile.png')} alt="User" />
-      </div>
-      <h3 className="testimonial-card-title">Jane Smith</h3>
-      <p className="testimonial-card-description">
-        Customisation options are excellent, and support is super responsive.
-      </p>
-      <div className="testimonial-rating">
-      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-
-      </div>
-    </div>
-
-    <div className="testimonial-card">
-      <div className="testimonial-card-icon">
-        <img src={require('./profile.png')} alt="User" />
-      </div>
-      <h3 className="testimonial-card-title">Michael Lee</h3>
-      <p className="testimonial-card-description">
-        Security is robust and customer support is always there to help.
-      </p>
-      <div className="testimonial-rating">
-      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-
+      <div className="why-box card-container">
+        <div className="card-image">
+          <img src={require('./vector6.png')} alt="Customer Support" />
+        </div>
+        <div className="why-card-content">
+          <h3 className="why-card-title">Customer Support</h3>
+          <p className="why-card-description">We Create Exceptional Digital Marketing Plans That Align with your Unique Brands, Ensuring every Campaign resonates with Your target Audience.</p>
+        </div>
       </div>
     </div>
   </div>
-</section>
+  <footer className='why-footer'><img src={require('./slider.png')} alt="John Doe" /></footer>
+</div>
+
+
+
+
+<div className="testimonial-container" id="testimonials">
+
+  <div className="testimonial-inner-wrapper">
+
+    <h2 className="testimonials-heading">Testimonials</h2>
+
+    <div className="card-grid">
+
+      <div className="testimonial-box card-container">
+        <div className="test-card-image">
+          <img src={require('./testpro.png')} alt="John Doe" />
+        </div>
+        <div className="test-card-content">
+          <h3 className="testimonial-card-title">John Doe</h3>
+          <p className="testimonial-card-description">Outstanding service with top-notch security measures. Highly recommended!</p>
+          <div className="testimonial-rating">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="testimonial-box card-container">
+        <div className="test-card-image">
+          <img src={require('./testpro.png')} alt="Jane Smith" />
+        </div>
+        <div className="test-card-content">
+          <h3 className="testimonial-card-title">Jane Smith</h3>
+          <p className="testimonial-card-description">Customisation options are excellent, and support is super responsive.</p>
+          <div className="testimonial-rating">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="testimonial-box card-container">
+        <div className="test-card-image">
+          <img src={require('./testpro.png')} alt="Michael Lee" />
+        </div>
+        <div className="test-card-content">
+          <h3 className="testimonial-card-title">Michael Lee</h3>
+          <p className="testimonial-card-description">Security is robust and customer support is always there to help.</p>
+          <div className="testimonial-rating">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
 
 
       {/* Contact Section */}
