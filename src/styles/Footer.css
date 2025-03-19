@@ -1,0 +1,12 @@
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    /* Footer is no longer fixed */
+  }
+  
+  footer p {
+    margin: 0;
+  }

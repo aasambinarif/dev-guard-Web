@@ -1,0 +1,210 @@
+
+/* About Section Styles */
+.about-us-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background-color: #e5e5e5;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    gap: 30px;
+    max-width: 100%;
+    margin: 0;
+    height: 700px; /* Full-page height by default */
+    color: #121212;
+    flex-wrap: wrap; /* Allow columns to stack on smaller screens */
+    box-sizing: border-box; /* Ensure padding is included in height */
+  }
+  
+  
+  
+  /* About Us Left Container */
+  .about-us-left {
+    position: relative;
+    background-image: url(../assets/images/whyusim.jpg);
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 20px;
+    min-height: 300px; /* Ensures a minimum height */
+    height: 80%; /* Adjusted to fit within 100vh */
+    box-sizing: border-box;
+  }
+  
+  /* Background Image Wrapper (for Blur Effect) */
+  .about-us-left::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    transition: filter 0.5s ease-in-out;
+    z-index: 0;
+  }
+  
+  .about-us-left:hover::before {
+    filter: blur(5px);
+  }
+  
+  /* Dark Overlay on Hover */
+  .about-us-left::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1;
+  }
+  
+  .about-us-left:hover::after {
+    opacity: 1;
+  }
+  
+  /* Text Content */
+  .about-us-left .text-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s ease-in-out;
+    text-align: left;
+  }
+  
+  .about-us-left:hover .text-content {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Heading Styling */
+  .about-us-left h2 {
+    font-size: 32px;
+    color: #e37329;
+    margin: 0;
+  }
+  
+  /* Paragraph Styling */
+  .about-us-left p {
+    font-size: 16px;
+    color: #fff;
+    margin-top: 10px;
+  }
+  
+  /* About Us Right Container */
+  .about-us-right {
+    flex: 2;
+    text-align: left;
+    padding: 20px;
+    height: 80%; /* Adjusted to fit within 100vh */
+    box-sizing: border-box;
+  }
+  
+  .about-us-right h3 {
+    font-size: 36px;
+    color: #e37329;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .about-us-right p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .about-us-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        height: auto; /* Allow scroll if content overflows */
+    }
+  
+    .about-us-left, .about-us-right {
+        flex: 1;
+        width: 100%;
+        padding: 10px;
+        height: auto; /* Auto height for smaller screens */
+    }
+  
+    .about-us-left h2 {
+        font-size: 28px;
+    }
+  
+    .about-us-right h3 {
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+  
+    .about-us-right p {
+        text-align: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .about-us-left h2 {
+        font-size: 24px;
+    }
+  
+    .about-us-left p {
+        font-size: 14px;
+    }
+  
+    .about-us-right h3 {
+        font-size: 26px;
+    }
+  
+    .about-us-right p {
+        font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .about-us-left, .about-us-right {
+        padding: 10px;
+        text-align: center;
+    }
+  
+    .about-us-left h2 {
+        font-size: 20px;
+    }
+  
+    .about-us-left p {
+        font-size: 12px;
+    }
+  
+    .about-us-right h3 {
+        font-size: 22px;
+    }
+  
+    .about-us-right p {
+        font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .about-us-left h2, .about-us-right h3 {
+        font-size: 18px;
+    }
+  
+    .about-us-left p, .about-us-right p {
+        font-size: 10px;
+    }
+  }
