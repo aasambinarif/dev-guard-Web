@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/dev-guard-Web/static/css/main.4cee586a.css",
-    "main.js": "/dev-guard-Web/static/js/main.d595c238.js",
+    "main.css": "/dev-guard-Web/static/css/main.fe4de836.css",
+    "main.js": "/dev-guard-Web/static/js/main.de7c1c9b.js",
     "static/js/453.e71f450d.chunk.js": "/dev-guard-Web/static/js/453.e71f450d.chunk.js",
     "static/media/service.jpg": "/dev-guard-Web/static/media/service.ea1cc58a26b0c0012c6c.jpg",
     "static/media/whyusim.jpg": "/dev-guard-Web/static/media/whyusim.ee921e66f6bad5f13ccd.jpg",
     "static/media/testi.jpg": "/dev-guard-Web/static/media/testi.76183d22af78ff37820d.jpg",
     "static/media/back1.jpg": "/dev-guard-Web/static/media/back1.394035315b356d4c26c0.jpg",
     "index.html": "/dev-guard-Web/index.html",
-    "main.4cee586a.css.map": "/dev-guard-Web/static/css/main.4cee586a.css.map",
-    "main.d595c238.js.map": "/dev-guard-Web/static/js/main.d595c238.js.map",
+    "main.fe4de836.css.map": "/dev-guard-Web/static/css/main.fe4de836.css.map",
+    "main.de7c1c9b.js.map": "/dev-guard-Web/static/js/main.de7c1c9b.js.map",
     "453.e71f450d.chunk.js.map": "/dev-guard-Web/static/js/453.e71f450d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4cee586a.css",
-    "static/js/main.d595c238.js"
+    "static/css/main.fe4de836.css",
+    "static/js/main.de7c1c9b.js"
   ]
 }
